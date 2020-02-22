@@ -17,23 +17,23 @@ public class GradesController
     {
         this.gradeRepository = gradeRepository;
     }
+
     @CrossOrigin(origins = "*")
-        @PostMapping("/addgrades")
+    @PostMapping("/addgrades")
     public Grades addGrades(@RequestBody Grades g)
     {
         return gradeRepository.save(g);
     }
+
     @CrossOrigin(origins = "*")
     @PostMapping("/retrievegrades")
     public ArrayList<Grades> getGrades(@RequestBody String courseNumber)
     {
-         System.out.println("In retrieve grades "+courseNumber);
-         gradesArray = gradeRepository.findByCourseNumber(Integer.parseInt(courseNumber.substring(0,courseNumber.length()-1)));
-//         System.out.println(gradesArray);
-
-//        System.out.println(gradeRepository.findAll());
+        System.out.println("In retrieve grades "+courseNumber);
+        gradesArray = gradeRepository.findByCourseNumber(Integer.parseInt(courseNumber.substring(0,courseNumber.length()-1)));
         return (ArrayList<Grades>) gradesArray;
     }
+
     @CrossOrigin(origins = "*")
     @GetMapping("/totalgrades")
     public int[] getTotalGrades()

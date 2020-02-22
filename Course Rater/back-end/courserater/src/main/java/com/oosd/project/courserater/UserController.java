@@ -18,24 +18,22 @@ public class UserController {
     public UserController(UserRepository repository){
         this.repository = repository;
     }
+
     @GetMapping("/allusers")
     @CrossOrigin(origins = "*")
     public List<User> allUsers(){
         return repository.findAll();
     }
 
-<<<<<<< HEAD
 
-    @CrossOrigin(origins = "http://localhost:3000")
-=======
     @CrossOrigin(origins = "*")
->>>>>>> 7a787efa519035b9913e7ca0c7f5edbd7cb77d9f
     @GetMapping("/users")
     public User findUser()
     {   Optional<User> userOptional = repository.findById("5dc77b090cbb325607da2370");
         User user = userOptional.get();
         return user;
     }
+
     @CrossOrigin(origins = "*")
     @PutMapping("/userid")
     public User findUserById(@RequestBody String id){
@@ -43,10 +41,7 @@ public class UserController {
         User user=repository.findUserById(id);
         return user;
     }
-<<<<<<< HEAD
 
-    @CrossOrigin(origins = "http://localhost:3000")
-=======
     @CrossOrigin(origins = "*")
     @PostMapping("/user/coins")
     public int coins(@RequestBody String id){
@@ -54,6 +49,7 @@ public class UserController {
         User user=repository.findUserById(id.substring(0,id.length()-1));
         return user.getCoins();
     }
+
     @CrossOrigin(origins = "*")
     @PostMapping("/user/addcoins")
     public int addcoins(@RequestBody String id){
@@ -63,8 +59,8 @@ public class UserController {
         repository.save(user);
         return user.getCoins();
     }
+
     @CrossOrigin(origins = "*")
->>>>>>> 7a787efa519035b9913e7ca0c7f5edbd7cb77d9f
     @PostMapping("/users")
     public User addUsers(@RequestBody User user){
         user.setCoins(100);
@@ -100,24 +96,20 @@ public class UserController {
 
         return null;
     }
+
+
     @CrossOrigin(origins = "*")
     @PutMapping("users/{userId}/subscribe")
     public User subscribeToCourse(@RequestBody String courseId, @PathVariable String userId){
-<<<<<<< HEAD
         ArrayList<String> courses = new ArrayList<>();
-=======
-        ArrayList<String> courses;
->>>>>>> 7a787efa519035b9913e7ca0c7f5edbd7cb77d9f
+
         Optional<User> userOptional = repository.findById(userId);
         System.out.println(userOptional);
         if(!userOptional.isPresent()){
             return null;
         }
         User user = userOptional.get();
-<<<<<<< HEAD
 
-=======
->>>>>>> 7a787efa519035b9913e7ca0c7f5edbd7cb77d9f
         courses = (ArrayList<String>) user.getCoursesSubscribed();
         if(courses.contains(courseId))
         {
@@ -125,18 +117,10 @@ public class UserController {
         }
         else {
             user.subscribeCourse(courseId);
-<<<<<<< HEAD
-            user.setCoins(user.getCoins() - 20);
-            repository.save(user);
-            return user;
-        }
-
-=======
             user.setCoins(user.getCoins() - 10);
             repository.save(user);
             return user;
         }
->>>>>>> 7a787efa519035b9913e7ca0c7f5edbd7cb77d9f
     }
 
 

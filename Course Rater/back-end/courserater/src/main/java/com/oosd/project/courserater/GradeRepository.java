@@ -8,8 +8,7 @@ import java.util.List;
 
 @CrossOrigin(origins = "*")
 @RepositoryRestResource(collectionResourceRel = "grades", path = "grades")
-    public interface GradeRepository extends MongoRepository<Grades,String>
-    {
-        public List<Grades> findByCourseNumber(int courseNumber);
-    }
-
+public interface GradeRepository extends MongoRepository<Grades,String>
+{
+    public List<Grades> findByCourseNumber(int courseNumber);
+}

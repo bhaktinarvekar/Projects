@@ -15,11 +15,6 @@ public class Feedback
     private int finalDifficulty;
     private int overallDifficulty;
 
-    /*assignDifficulty: 0
-finalDifficulty: 0
-midtermDifficulty: 0
-overallDifficulty: 0
-    * */
     public String getCourseId() {
         return courseId;
     }

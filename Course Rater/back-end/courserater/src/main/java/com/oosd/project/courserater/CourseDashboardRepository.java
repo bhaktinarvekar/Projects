@@ -9,5 +9,4 @@ import java.util.List;
 @RepositoryRestResource(collectionResourceRel = "coursedashboard", path = "coursedashboard")
 public interface CourseDashboardRepository extends MongoRepository<User, String>
 {
-//   List<User> findById(String id);
 }

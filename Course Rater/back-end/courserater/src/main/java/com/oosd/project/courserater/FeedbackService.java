@@ -24,21 +24,12 @@ public class FeedbackService
 
     public ArrayList<Feedback> getFeedbackValues(FeedbackRepository repository, String courseId)
     {
-<<<<<<< HEAD
             feedbackArray = (ArrayList)repository.findByCourseId(courseId);
             assignResponses(feedbackArray);
             midtermResponses(feedbackArray);
             timeConsumedResponses(feedbackArray);
             overallResponses(feedbackArray);
             return (ArrayList<Feedback>) feedbackArray;
-=======
-        feedbackArray = (ArrayList)repository.findByCourseId(courseId);
-        assignResponses(feedbackArray);
-        midtermResponses(feedbackArray);
-        timeConsumedResponses(feedbackArray);
-        overallResponses(feedbackArray);
-        return (ArrayList<Feedback>) feedbackArray;
->>>>>>> 7a787efa519035b9913e7ca0c7f5edbd7cb77d9f
     }
 
     public int assignResponses(List<Feedback> feedbackArray)

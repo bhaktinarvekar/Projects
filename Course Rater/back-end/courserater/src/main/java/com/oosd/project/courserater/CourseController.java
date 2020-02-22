@@ -17,6 +17,7 @@ public class CourseController {
     public List<Course> allCourses(){
         return repository.findAll();
     }
+
     @CrossOrigin(origins = "*")
     @PostMapping("/postcourse")
     public Course addTest(@RequestBody Course c1){
@@ -28,24 +29,26 @@ public class CourseController {
     @GetMapping("/filterCourses")
     public List<Course> filteredCourses(String query){
         query = query.toUpperCase();
-       // List<Course> cn = repository.findCoursesByCourseNumberEquals()
+        // List<Course> cn = repository.findCoursesByCourseNumberEquals()
         return repository.findCoursesByCourseNameContainingOrCourseNumberContainingOrDepartmentContainingOrSubjectContaining(query,query,query,query);
     }
+
     @CrossOrigin(origins = "*")
     @PutMapping("/courseid")
     public Course findCourseById(@RequestBody String id){
         Course course=repository.findCourseById(id);
         return course;
     }
+
     @CrossOrigin(origins = "*")
     @PutMapping("/coursenumber")
     public Course findCourseByCourseNumber(@RequestBody String courseNumber){
         Course course=repository.findCourseByCourseNumber(courseNumber);
         return course;
     }
+
     @CrossOrigin(origins = "*")
     @PostMapping("/courseobjects")
-
     public List<Course> getCoursesByIds(@RequestBody String[] courseIds){
 
         for(String str: courseIds){
