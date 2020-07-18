@@ -1,6 +1,6 @@
 # Classification Model and Sentiment Analysis for Walmart Customer Reviews
 
-*Used a Multinomial Naive Bayes Classifier to classify the Walmart Customer Reviews as positive and negative for multiple products which eliminates the need of browsing through each product and weighing the reviews as positive and negative.*
+***Used a Multinomial Naive Bayes Classifier to classify the Walmart Customer Reviews as positive and negative for multiple products which eliminates the need of browsing through each product and weighing the reviews as positive and negative.***
 
 ### To run the files:
 
@@ -28,8 +28,8 @@ The total number of records in testing dataset are: 5000
 The accuracy of Multimodial Naive Bayes Model is: 94.2 %
 ```
 
-2. Then, you will be prompted to enter the name of the product. If you want to compare the current product with some other product then type "yes" otherwise type "no"
-Example: I entered the product Samsung S20 and I wanted to compare it with iphone XS and iphone 11
+2. Then, you will be prompted to enter the name of the product. If you want to compare the current product with some other product then type **"yes"** otherwise type **"no"**
+**Example:** I entered the product Samsung S20 and I wanted to compare it with iphone XS and iphone 11
 
 ```
 ----------------------------------------------------------------------------------------------------
@@ -57,7 +57,7 @@ On entering the product names, customer reviews will be scraped from Walmart and
 5. A training set is developed by iterating through reviews and checking if the reviews contain the word from the 2000 words that were filtered out.
 6. Once trained, the model is tested by using the 'test_reviews.csv' dataset which was downloaded from Kaggle as well and the steps 2 - 5 are repeated to prepare a testing dataset.
 
-*The accuracy of the Multinomial Naive Bayes classifier is 94.2%*
+***The accuracy of the Multinomial Naive Bayes classifier is 94.2%***
 
 ## Classification of Walmart Customer Reviews:
 
