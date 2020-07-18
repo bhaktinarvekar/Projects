@@ -1,8 +1,8 @@
-#Classification Model and Sentiment Analysis for Walmart Customer Reviews
+# Classification Model and Sentiment Analysis for Walmart Customer Reviews
 
 *Used a Multinomial Naive Bayes Classifier to classify the Walmart Customer Reviews as positive and negative for multiple products which eliminates the need of browsing through each product and weighing the reviews as positive and negative.*
 
-##To run the files:
+### To run the files:
 
 1. Recommended to use Jupyter Notebook: Open the ```.ipynb``` file in browser.
 2. If you want to run it on Linux/Windows command prompt then follow the below steps:
@@ -11,7 +11,7 @@ $ cd /SentimentAnalysis
 $ python -W ignore sentiment_analysis.py
 ```
 
-##Output
+### Output
 
 1. On running the above command, you will get the following output:
 
@@ -48,7 +48,7 @@ On entering the product names, customer reviews will be scraped from Walmart and
 
 **Recommended:** Add only 10 products at a time, in order to get good visualization plot for comparison.
 
-##Implementation of Multinomial Naive Bayes Classifier
+### Implementation of Multinomial Naive Bayes Classifier
 
 1. The dataset used is 'product_reviews.csv' which is downloaded from Kaggle.
 2. The reviews from the dataset are classified as positive or negative by using the sentiment analysis tool called VADER
@@ -59,7 +59,7 @@ On entering the product names, customer reviews will be scraped from Walmart and
 
 *The accuracy of the Multinomial Naive Bayes classifier is 94.2%*
 
-##Classification of Walmart Customer Reviews:
+## Classification of Walmart Customer Reviews:
 
 1. User is prompted to enter the name of the products and the customer reviews for those products is scrapped from Walmart using "BeautifulSoup"
 2. The reviews are processed and tested using the classifier.
