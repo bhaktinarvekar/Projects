@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .greetings {
+            color: #ff6600;
+            font-weight: bold;
+        }
+        .delivery_date {
+            color: #ff6600;
+        }
+        .summary {
+            font-style: italic;
+            color: #004080
+        }
+        .table {
+            padding: 20px;
+            align-content: right;
+            text-align: right;
+            font-size: 16px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #3366cc;
+        }
+        .shipping {
+            background-color: #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            width: 500px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>Order Confirmation</h2>
+        <h5>Order ID: #{{orderID}}</h5>
+        <br/>
+        <p class="greetings">Hello {{name}},</p>
+        <p>Thank you for shopping with us. Your order has been shipped and will be delivered soon. <br/>Your order details are given below.</p>
+        <hr/>
+        <div>
+            <h5 class="delivery_date">Your estimated delivery date is: {{date}}</h5>
+            <h5></h5>
+        </div>
+        <div class="shipping">
+            Shipping address: {{shipping_add}}, {{city}} {{state}}-{{pincode}}
+        </div>
+        <br/>
+        <div>
+            <h2 class="summary">Payment Summary</h2>
+            <hr/>
+            <h6>orderID: #{{orderID}}</h6>
+            <div>
+                <table class="table" cellspacing="2px">
+                    <tr>
+                        <td>Item Subtotal</td>
+                        <td> </td>
+                        <td> ${{price}}</td>
+                    </tr>
+                    <tr>
+                        <td>Shipping</td>
+                        <td> </td>
+                        <td> ${{ship_price}}</td>
+                    </tr>
+                    <tr>
+                        <td>Tax</td>
+                        <td> </td>
+                        <td> ${{tax}}</td>
+                    </tr>
+                    <tr>
+                        <th>Order Total</th>
+                        <td> </td>
+                        <td> ${{total}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
