@@ -1,12 +1,7 @@
-# Team: Random Error
+# Weather Predictor
 
-## Team Members:
-1.Ashlesha Shinde.<br>
-2.Sairaj Gaonkar.<br>
-3.Bhakti Narvekar.
 
-# Documentation
-This document provides the instructions to run the application on your machine.
+### Installation
 
 ### Clone the project
 ```
