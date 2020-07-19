@@ -7,7 +7,7 @@
 1. Recommended to use Jupyter Notebook: Open the ```.ipynb``` file in browser.
 2. If you want to run it on Linux/Windows command prompt then follow the below steps:
 ```
-$ cd /SentimentAnalysis
+$ cd "Classification Model and Sentiment Analysis for Walmart Customer Reviews"
 $ python -W ignore sentiment_analysis.py
 ```
 
@@ -16,7 +16,7 @@ $ python -W ignore sentiment_analysis.py
 1. On running the above command, you will get the following output:
 
 ```
-C:\Users\Bhakti\web_scrapping_project>python -W ignore sentiment_analysis.py
+C:\Downloads\Classification Model and Sentiment Analysis for Walmart Customer Reviews>python -W ignore sentiment_analysis.py
 ----------------------------------------------------------------------------------------------------
 |             CLASSIFICATION MODEL AND SENTIMENT ANALYSIS OF WALMART CUSTOMER REVIEWS              |
 |                                           WELCOME                                                |
@@ -25,10 +25,11 @@ The total number of records are: 28332
 The total number of records in training dataset are: 28332
 The total number of records in testing dataset are: 5000
 The total number of records in testing dataset are: 5000
-The accuracy of Multimodial Naive Bayes Model is: 94.2 %
+The accuracy of Multimodial Naive Bayes Model is: 85.64 %
 ```
 
 2. Then, you will be prompted to enter the name of the product. If you want to compare the current product with some other product then type **"yes"** otherwise type **"no"**
+
 **Example:** I entered the product Samsung S20 and I wanted to compare it with iphone XS and iphone 11
 
 ```
@@ -57,7 +58,7 @@ On entering the product names, customer reviews will be scraped from Walmart and
 5. A training set is developed by iterating through reviews and checking if the reviews contain the word from the 2000 words that were filtered out.
 6. Once trained, the model is tested by using the 'test_reviews.csv' dataset which was downloaded from Kaggle as well and the steps 2 - 5 are repeated to prepare a testing dataset.
 
-***The accuracy of the Multinomial Naive Bayes classifier is 94.2%***
+***The accuracy of the Multinomial Naive Bayes classifier is 85.64 %***
 
 ## Classification of Walmart Customer Reviews:
 
