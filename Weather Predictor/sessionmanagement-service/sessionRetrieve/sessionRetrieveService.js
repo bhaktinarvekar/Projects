@@ -15,7 +15,7 @@ Session = mongoose.model("Session", sessionSchema);
 
     var amqp = require("amqplib/callback_api");
 
-    amqp.connect('amqp://localhost', (err, conn)=>{
+    amqp.connect('amqp://rabbitmq-test', (err, conn)=>{
         if(err)
             throw err;
         conn.createChannel((err1, channel1)=>{
@@ -34,7 +34,7 @@ Session = mongoose.model("Session", sessionSchema);
                 var queue1 = "test";
                 console.log("Data received from the UI is ", json_msg);
                 console.log("Username", user_name);
-                Session.find({"inserttime":{'$gte' : start_date, '$lte' : end_date}, "username" : user_name  
+                Session.find({"inserttime":{'$gte' : new Date(new Date(start_date).setHours(00,00,00)), '$lte' : new Date(new Date(end_date).setHours(23,59,59))}, "username" : user_name  
                 }, (err, res)=>{
                     if(err)
                         console.log("error in session find")
@@ -49,5 +49,7 @@ Session = mongoose.model("Session", sessionSchema);
                 });
                 channel1.ack(msg)   
             });
+            
+
         });
     }); 

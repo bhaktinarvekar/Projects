@@ -50,7 +50,6 @@ public class CourseController {
     @CrossOrigin(origins = "*")
     @PostMapping("/courseobjects")
     public List<Course> getCoursesByIds(@RequestBody String[] courseIds){
-
         for(String str: courseIds){
             System.out.println("dashboard : "+str);
         }

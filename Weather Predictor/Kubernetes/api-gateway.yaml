@@ -1,0 +1,61 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ui-api-l0.1
+  labels:
+    app: ui-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ui-api
+  template:
+    metadata:
+      labels:
+        app: ui-api
+    spec:
+      containers:
+      - name: ui-api
+        image: sgarandomerror/ui-api:l0.1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8084                     
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ui-api-l0.2
+  labels:
+    app: ui-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ui-api
+  template:
+    metadata:
+      labels:
+        app: ui-api
+    spec:
+      containers:
+      - name: ui-api
+        image: sgarandomerror/ui-api:l0.2
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8084                     
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ui-api-linkerd
+  labels:
+    app: ui-api
+spec:
+  ports:
+  - port: 8084
+    targetPort: 8084
+    nodePort: 30653
+    protocol: TCP
+  selector:
+    app: ui-api
+  type: NodePort
