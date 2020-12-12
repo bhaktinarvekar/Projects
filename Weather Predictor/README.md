@@ -1,15 +1,15 @@
-# Weather Predictor
+# Team: Random Error
 
+## Team Members:
+1.Ashlesha Shinde.<br>
+2.Sairaj Gaonkar.<br>
+3.Bhakti Narvekar.
 
-<<<<<<< HEAD
 
 ## Assignment No. 1:
 
 # Documentation
 This document provides the instructions to run the application on your machine.
-=======
-### Installation
->>>>>>> 6aa4b46534cfc5d761182577ddbb234f6b4aa10a
 
 ### Clone the project
 ```

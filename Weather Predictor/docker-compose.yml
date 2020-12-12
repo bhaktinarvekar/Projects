@@ -1,0 +1,51 @@
+version: "3.2"
+services:
+   rabbitmq:
+        image: rabbitmq:management
+        ports:
+          # The standard AMQP protocol port
+          - '5672:5672'
+          # HTTP management UI
+          - '15672:15672'
+
+  
+   datamodeling:
+        image: sgarandomerror/data-modeling:l0.1
+        build: ./datamodeling-service
+        volumes:
+            - './plots:/plots'
+
+   dataretrieval:
+        image: sgarandomerror/data-retrieval:l0.1
+        build: ./dataretrieval-service
+  
+    
+   sessionstore:
+        image: sgarandomerror/sessionstore:l0.1
+        build: ./sessionmanagement-service/sessionStore
+        ports:
+            - "8083:8083"
+ 
+       
+   sessionretrieve:
+        image: sgarandomerror/sessionretrieve:l0.1
+        build: ./sessionmanagement-service/sessionRetrieve
+        ports:
+            - "8082:8082"
+       
+
+   usermanagement:
+        image: sgarandomerror/usermanagement:l0.1
+        build: ./usermanagement-service
+        ports:
+            - "8081:8081"
+ 
+   ui-api:
+        image: sgarandomerror/ui-api:l0.2
+        build: ./ui-api-service
+        ports:
+            - "8080:8080"
+  
+
+
+    
