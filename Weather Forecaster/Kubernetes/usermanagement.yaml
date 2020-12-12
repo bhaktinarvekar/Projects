@@ -1,0 +1,62 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: usermanagement-l0.1
+  labels:
+    app: usermanagement
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: usermanagement
+  template:
+    metadata:
+      labels:
+        app: usermanagement
+    spec:
+      containers:
+      - name: usermanagement
+        image: sgarandomerror/usermanagement:l0.1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8085                     
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: usermanagement-l0.2
+  labels:
+    app: usermanagement
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: usermanagement
+  template:
+    metadata:
+      labels:
+        app: usermanagement
+    spec:
+      containers:
+      - name: usermanagement
+        image: sgarandomerror/usermanagement:l0.1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8085                     
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: usermanagement-linkerd
+  labels:
+    app: usermanagement
+spec:
+  ports:
+  - port: 8085
+    targetPort: 8085
+    nodePort: 30654
+    protocol: TCP
+  selector:
+    app: usermanagement
+  type: NodePort
+  
